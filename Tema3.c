@@ -267,7 +267,10 @@ int main(){
         if(strcmp(comanda, "cd") == 0){
             
             char* nume = strtok(NULL, " \n");
-
+            if (nume == NULL){
+                printf("Directory not found!\n");
+                continue;
+            }
             if(strcmp(nume, "..") == 0){
                 if(dir_curent->parinte == NULL){
 
